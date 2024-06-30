@@ -15,7 +15,7 @@ function isVowel(character){
 function countVowel(str){
     let count = 0;
     for(let i=0;i<str.length;i++){
-        isVowel(str[i]){
+        if(isVowel(str[i])){
             count+=1;
         }
     }
@@ -25,10 +25,22 @@ function countVowel(str){
 countVowel("Hello")
 
 
-function recursiveCountVowel(str,strLength){
-    if(strLength==1){
-        return Number(isVowel(string[0]))
+// function recursiveCountVowel(str,strLength){
+//     if(strLength==1){
+//         return Number(isVowel(string[0]))
+//     }
+
+//     return recursiveCountVowel(str,str.length-1)+isVowel(str[strLength-1])
+// }
+// console.log(recursiveCountVowel("Hello",5))
+
+
+function recursiveCountVowel1(str){
+    
+    if(str.length==1){
+        return Number(isVowel(str[0]))
     }
-    return recursiveCountVowel(str,str.length-1)+isVowel(str[strLength-1])
+    
+    return recursiveCountVowel1 (str.substring(1))+isVowel(str[0])
 }
-console.log(recursiveCountVowel("Hello",5))
+console.log(recursiveCountVowel1("hello"))
